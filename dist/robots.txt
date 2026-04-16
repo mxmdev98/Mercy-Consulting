@@ -1,0 +1,50 @@
+# Allow legitimate search engines (Google, Bing, etc.)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# --- BLOCK MALICIOUS / AGGRESSIVE BOTS ---
+
+# Ahrefs (often scrapes contact info aggressively)
+User-agent: AhrefsBot
+Disallow: /
+
+# Majestic SEO
+User-agent: MJ12bot
+Disallow: /
+
+# Semrush
+User-agent: SemrushBot
+Disallow: /
+
+# DotBot (aggressive scraper)
+User-agent: DotBot
+Disallow: /
+
+# BLEXBot (scrapes emails for spam)
+User-agent: BLEXBot
+Disallow: /
+
+# Generic Backlink Crawler
+User-agent: BacklinkCrawler
+Disallow: /
+
+# ------------------------------------------
+
+# Default setting for all other bots
+User-agent: *
+Allow: /
+
+# Keep the API block for safety
+Disallow: /api/
+
+# Sitemap URL
+Sitemap: https://mercyconsulting.com/sitemap.xml
