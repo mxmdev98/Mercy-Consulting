@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors()); // Allow requests from your React frontend
+app.use(cors()); // Allow requests from your frontend
 app.use(express.json()); // Parse incoming JSON requests
 
 app.use(express.static(path.join(__dirname, 'dist')));
@@ -55,8 +55,8 @@ app.post('/api/contact',contactLimiter, async (req, res) => {
   // 2. Configure Nodemailer Transporter
   const transporter = nodemailer.createTransport({
   host: 'mail.privateemail.com',
-  port: 465, // Use 465 for SSL or 587 for TLS
-  secure: true, // true for 465, false for 587
+  port: 465, 
+  secure: true, 
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
@@ -92,7 +92,6 @@ app.post('/api/contact',contactLimiter, async (req, res) => {
   }
 });
 
-// Any request not caught above (like /services, /forms) returns index.html
 app.get(/.*/, (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
