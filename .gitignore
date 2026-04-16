@@ -2,10 +2,6 @@
 node_modules/
 jspm_packages/
 
-# Production Build (Must be ignored so Dokploy builds it)
-dist/
-build/
-
 # Environment Variables (Security Risk if pushed)
 .env
 .env.local
